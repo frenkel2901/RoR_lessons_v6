@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#send("bin/rails db:seed:replant".to_sym)
+
 categories = Category.create!([{ title: 'Ruby' }, { title: 'HTML' }, { title: 'SQL' }])
 
 users = User.create!([{ name: 'Anna' }, { name: 'Josef' }, { name: 'John' }])
@@ -48,7 +50,7 @@ answers = Answer.create!(
 results = Result.create!(
   [
     { user_id: users[0].id, test_id: tests[0].id },
-    { user_id: users[0].id, test_id: tests[1].id },
+    { user_id: users[0].id, test_id: tests[3].id },
     { user_id: users[1].id, test_id: tests[2].id },
     { user_id: users[1].id, test_id: tests[3].id },
     { user_id: users[2].id, test_id: tests[4].id }
