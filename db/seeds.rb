@@ -8,6 +8,17 @@
 
 #send("bin/rails db:seed:replant".to_sym)
 
+=begin
+Category.destroy_all
+User.destroy_all
+Test.destroy_all
+Question.destroy_all
+Answer.destroy_all
+Result.destroy_all
+
+SQLite3::ConstraintException: FOREIGN KEY constraint failed
+=end
+
 categories = Category.create!([{ title: 'Ruby' }, { title: 'HTML' }, { title: 'SQL' }])
 
 users = User.create!([{ name: 'Anna' }, { name: 'Josef' }, { name: 'John' }])
