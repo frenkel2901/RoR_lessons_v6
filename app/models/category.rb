@@ -1,3 +1,8 @@
 class Category < ApplicationRecord
+  default_scope { orded(:title) }
+  
   has_many :tests, dependent: :destroy
+
+  validates :title, persence: true
+
 end

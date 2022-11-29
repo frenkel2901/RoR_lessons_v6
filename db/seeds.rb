@@ -17,7 +17,13 @@ Category.destroy_all
 
 categories = Category.create!([{ title: 'Ruby' }, { title: 'HTML' }, { title: 'SQL' }])
 
-users = User.create!([{ name: 'Anna' }, { name: 'Josef' }, { name: 'John' }])
+users = User.create!(
+  [
+    { name: 'Anna', mail: 'anna@mail.mail' },
+    { name: 'Josef', mail: 'josef@mail.mail' },
+    { name: 'John', mail: 'john@mail.mail' }
+  ]
+)
 
 tests = Test.create!(
   [
