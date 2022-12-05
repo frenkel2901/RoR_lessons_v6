@@ -3,7 +3,7 @@ class Answer < ApplicationRecord
 
   belongs_to :question
 
-  validates :body, persence: true
+  validates :body, presence: true
   validate :validate_max_ans, on: :create
 
   scope :correct, -> { where(correct: true) }
