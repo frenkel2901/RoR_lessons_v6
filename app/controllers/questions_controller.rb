@@ -19,8 +19,9 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      render plain: question.inspect
+      redirect_to @question
     else
+      render :new
     end
   end
 
@@ -32,7 +33,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:questions).permit(:body)
+    params.require(:question).permit(:body)
   end
 
   def find_test

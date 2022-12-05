@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
   def index
-    result = ["#{params.class}, #{params.inspect}"]
-    render plain: result
+    @tests = Test.all
   end
 end
