@@ -1,0 +1,10 @@
+<h1>Test <%= @test.title %> questions</h1>
+<p><%= link_to 'Create New Question',  new_test_question_path(@test) %></p>
+
+<ol>
+  <% @test.questions.each do |question| %>
+    <li><%= link_to question.body, question_path(question) %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Back to all tests', tests_path %>
