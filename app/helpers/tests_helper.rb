@@ -11,8 +11,4 @@ module TestsHelper
   def github_url(author:, repo:, title:)
     link_to title, "https://github.com/#{author}/#{repo}", target: '_blank', rel: 'noopener nofollow'
   end
-
-  def questions_count(test)
-    test.questions.count
-  end
 end
