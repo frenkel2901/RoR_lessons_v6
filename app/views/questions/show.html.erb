@@ -2,17 +2,4 @@
 <p>
   <%= link_to 'Edit', edit_question_path(@question) %> |
   <%= link_to 'Back', test_path(@question.test_id)  %></p>
-<!-- button can delete, but not confirm -->
-  <%= button_to 'Delete', {action: "destroy", id: @question.id }, method: :delete, data: { confirm: 'Are you sure' } %>
-
-<!-- it doesn't work. No confirm window
-
-<form class='button_to' method='post' action='<%= question_path(@question) %>' >
-<input name="authenticity_token" value=<%= form_authenticity_token %> type="hidden">
-<input name='_method' value='delete' type='hidden'>
-<input value='Destroy' type='submit' data-disable-with='loading...' data-confirm='Are you sure?'>
--->
-
-<!-- it doesn't work. Don't delete
-<%= link_to("Destroy_2", question_path(@question), method: :delete) %>
--->
+  <%= button_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure' } %>
