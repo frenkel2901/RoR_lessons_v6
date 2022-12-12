@@ -1,9 +1,4 @@
-module TestsHelper
-  def question_header(test, action)
-    headers = { create: "Create New #{test.title} Question", edit: "Edit #{test.title} Question" }
-      headers[action]
-  end
-    
+module TestsHelper    
   def year_now
     Time.current.year
   end
