@@ -8,8 +8,8 @@
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hodden:
   false do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids_#"{b.object.id} %>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label %>
     </p>
-  <%= end %>
-<%= end %>
+  <% end %>
+<% end %>
