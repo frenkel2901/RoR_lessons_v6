@@ -1,14 +1,12 @@
 <h1><%= @test_passage.test.title %> Test was Completed!</h1>
 
-<p><%= @test_passage.current_question_number %></p>
-
-<% if @test_passage.high_mark? %>
+<% if @test_passage.successfully_passed? %>
   <p><b><%=  @test_passage.user.name %> </b> you got a high score!<br>
-    <span style="color: green" >Score: <%= @test_passage.percentage_of_correct_answers %> %</span>
+    <span style="color: green" >Score: <%= @test_passage.percentage_correct_answers %> %</span>
   </p>
 <% else %>
   <p>Sorry <b><%= @test_passage.user.name %></strong></b>, you did not pass the test <br>
-    <span style="color: red">Score: <%= @test_passage.percentage_of_correct_answers %> %</span></p>
+    <span style="color: red">Score: <%= @test_passage.percentage_correct_answers %> %</span></p>
 <% end %>
 
 <%= link_to 'Back to all tests', tests_path %>

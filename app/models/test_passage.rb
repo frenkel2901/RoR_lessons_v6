@@ -12,27 +12,36 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def high_mark?
-    percentage_of_correct_answers >= GREAT
-  end
-
-  def percentage_of_correct_answers
-    correct_questions * 100 / self.test.questions.count.to_f
-  end
-
-  def current_question_number
-    test.questions.index(current_question).next
+  def successfully_passed?
+    percentage_correct_answers >= GREAT
   end
 
   def number_of_questions
     test.questions.count
   end
 
+  def current_question_number
+    test.questions.index(current_question).next
+  end
+
+  def percentage_correct_answers
+    correct_questions * 100 / test.questions.count.to_f
+  end
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-
-    self.current_question = next_question
     save!
+  end
+
+  def correct_answer?(answer_ids)
+    correct_answers_count = correct_answers.count
+
+    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
+    correct_answers_count == answer_ids.count
+  end
+
+  def correct_answers
+    current_question.answers.correct
   end
 
   private
@@ -43,14 +52,6 @@ class TestPassage < ApplicationRecord
                             else
                               next_question
                             end
-  end
-
-  def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-  end
-
-  def correct_answers
-    current_question.answers.correct
   end
 
   def next_question
