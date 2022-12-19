@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-  before_action :set_user, only: :start
   before_action :set_test, only: %i[ show start ]
 
   def index
@@ -9,6 +8,7 @@ class TestsController < ApplicationController
   def show; end
 
   def start
+    @user = User.first
     @user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end
@@ -17,9 +17,5 @@ class TestsController < ApplicationController
 
   def set_test
     @test = Test.find(params[:id])
-  end
-
-  def set_user
-    @user = User.first
   end
 end

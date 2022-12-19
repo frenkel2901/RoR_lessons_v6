@@ -8,7 +8,6 @@
 
 #send("bin/rails db:seed:replant".to_sym)
 
-Result.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
@@ -49,23 +48,13 @@ answers = Answer.create!(
   [
     { body: '<pre>', correct: true, question: questions[0] },
     { body: '<br>', correct: false, question: questions[0] },
-    { body: 'To wrap lines', correct: false, question: questions[1] },
+    { body: 'To wrap lines', correct: true, question: questions[1] },
     { body: 'To create empty space', correct: false, question: questions[1] },
     { body: 'puts without line break', correct: false, question: questions[2] },
-    { body: 'puts with a line break', correct: false, question: questions[2] },
+    { body: 'puts with a line break', correct: true, question: questions[2] },
     { body: 'x/3', correct: false, question: questions[3] },
-    { body: 'x /= 3', correct: false, question: questions[3] },
+    { body: 'x /= 3', correct: true, question: questions[3] },
     { body: 'Any database', correct: false, question: questions[4] },
-    { body: 'A database in which information is stored in the form of two-dimensional tables linked together', correct: false, question: questions[4] }  
-  ]
-)
-
-results = Result.create!(
-  [
-    { user: users[0], test: tests[0] },
-    { user: users[0], test: tests[3] },
-    { user: users[1], test: tests[2] },
-    { user: users[1], test: tests[3] },
-    { user: users[2], test: tests[4] }
+    { body: 'A database in which information is stored in the form of two-dimensional tables linked together', correct: true, question: questions[4] }  
   ]
 )
