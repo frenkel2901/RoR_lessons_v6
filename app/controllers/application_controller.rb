@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
+    cookies[:requested_page] = request.original_url
     unless current_user
       redirect_to login_path
     end
