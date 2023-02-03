@@ -1,6 +1,11 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable
 
   MAIL = /\A[\w]+@([A-z0-9]+[.])+[A-z]{2,4}\z/
 
@@ -11,8 +16,6 @@ class User < ApplicationRecord
   validates :mail, uniqueness: true, format: { with: MAIL, message: "example@mail.com" }
   validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
   validates :password, confirmation: true
-
-  has_secure_password
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)

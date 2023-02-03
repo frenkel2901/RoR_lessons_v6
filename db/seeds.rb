@@ -14,13 +14,14 @@ Test.destroy_all
 User.destroy_all
 Category.destroy_all
 
+=begin
 categories = Category.create!([{ title: 'Ruby' }, { title: 'HTML' }, { title: 'SQL' }])
 
 users = User.create!(
   [
-    { name: 'Anna', mail: 'anna@mail.mail', password_digest: '123'},
-    { name: 'Josef', mail: 'josef@mail.mail', password_digest: '12'},
-    { name: 'John', mail: 'john@mail.mail', password_digest: '123'}
+    { name: 'Anna', email: 'anna@mail.mail', password_digest: '123'},
+    { name: 'Josef', email: 'josef@mail.mail', password_digest: '12'},
+    { name: 'John', email: 'john@mail.mail', password_digest: '123'}
   ]
 )
 
@@ -58,3 +59,4 @@ answers = Answer.create!(
     { body: 'A database in which information is stored in the form of two-dimensional tables linked together', correct: true, question: questions[4] }  
   ]
 )
+=end
