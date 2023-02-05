@@ -1,5 +1,5 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::QuestionsController < ApplicationController
+  
   before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show destroy edit update]
 
@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to [:admin, @test]
     else
       render :new
     end
@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to test_path(@question.test_id)
+      redirect_to admin_test_path(@question.test)
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
   
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test_id)
+    redirect_to [:admin, @question.test]
   end
 
   private

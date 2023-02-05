@@ -1,5 +1,5 @@
-class AnswersController < ApplicationController
-  before_action :authenticate_user!
+class Admin::AnswersController < ApplicationController
+
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
@@ -14,23 +14,23 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to question_path(@answer.question_id), notice: "Answer was successfully created."
+      redirect_to [:admin, @answer.question], notice: 'Answer was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
   def update
     if @answer.update(answer_params)
-      redirect_to question_path(@answer.question_id), notice: "Answer was successfully updated."
+      redirect_to [:admin, @answer.question], notice: 'Answer was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
   def destroy
     @answer.destroy
-    redirect_to question_path(@answer.question_id), notice: "Answer was successfully deleted."
+    redirect_to [:admin, @answer.question], notice: 'Answer was deleted.'
   end
 
   private
