@@ -1,20 +1,28 @@
 <nav>
 
-  <% if logged_in? %>
-    <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+<% if current_user.is_a?(Admin) %>
+    <%= link_to 'Admin Panel', admin_tests_path %><br>
+    
+    <%= link_to 'User Tests', root_path %>                                    
+<% end %>
+
+  <% if user_signed_in? %>
+    <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
   <% end %>
 
   <h2 class="nav nav-title"> <%= link_to 'TestGuru Project', root_path %></h2>
+
   <ul class="nav-list">
-    <% unless logged_in? %>
-    <li class="nav-item"><%= link_to 'Register', signup_path, class:"nav nav-link" %></li>
-    <li class="nav-item"><%= link_to 'Login', login_path, class:"nav nav-link" %></li>
+    <% unless user_signed_in? %>
+      <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class:"nav nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Login', new_user_session_path, class:"nav nav-link" %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <li class="nav-item"><%= button_to 'Logout', destroy_user_session_path, class:"nav nav-link", 
+                                                                              method: :delete,
+                                                                              data: {confirm: "Are you sure"} %></li>
     <% end %>
   </ul>
 
-  <% if logged_in? %>
-    <li class="nav-item"><%= button_to 'Logout', logout_path, class:"nav nav-link", method: :delete,
-    data: {confirm: "Are you sure"} %></li>
-  <% end %>
-
 </nav>
+

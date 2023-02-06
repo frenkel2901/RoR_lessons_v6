@@ -18,9 +18,9 @@ categories = Category.create!([{ title: 'Ruby' }, { title: 'HTML' }, { title: 'S
 
 users = User.create!(
   [
-    { name: 'Anna', mail: 'anna@mail.mail', password_digest: '123'},
-    { name: 'Josef', mail: 'josef@mail.mail', password_digest: '12'},
-    { name: 'John', mail: 'john@mail.mail', password_digest: '123'}
+    { email: 'anna@mail.mail', password: 'qazqaz231' },
+    { email: 'josef@mail.mail', password: 'zxczxc321' },
+    { email: 'john@mail.mail', password: 'qweqwe123' }
   ]
 )
 

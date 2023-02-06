@@ -1,0 +1,9 @@
+<p><%= link_to 'Create New Test',  new_admin_test_path(@test) %></p>
+<%= link_to 'Edit current Test', edit_admin_test_path(@test)  %>
+<p><strong>Title</strong>: <%= @test.title %></p>
+<p><strong>Level</strong>: <%= @test.level %></p>
+<p><%= link_to 'Create New Question',  new_admin_test_question_path(@test) %></p>
+
+<%= render 'question' %>
+
+<p><%= link_to 'Back', admin_tests_path  %></p>
