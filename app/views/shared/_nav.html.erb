@@ -1,5 +1,11 @@
 <nav>
 
+<% if current_user.is_a?(Admin) %>
+    <%= link_to 'Admin Panel', admin_tests_path %><br>
+    
+    <%= link_to 'User Tests', root_path %>                                    
+<% end %>
+
   <% if user_signed_in? %>
     <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
   <% end %>
