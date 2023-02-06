@@ -46,9 +46,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.index :type
     end
-
-    change_column_default(:users, :email, '')
-
   end
 
   def self.down
