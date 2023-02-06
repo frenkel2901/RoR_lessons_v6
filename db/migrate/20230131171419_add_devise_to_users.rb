@@ -34,20 +34,21 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
+      t.remove :password_digest
+
+      t.index :email,                unique: true
+      t.index :reset_password_token, unique: true
+      t.index :confirmation_token,   unique: true
+      #t.index :unlock_token,         unique: true
+
+      t.string :type, null: false, default: 'User'
+      t.string :first_name
+      t.string :last_name
+      t.index :type
     end
 
-    remove_column(:users, :password_digest)
     change_column_default(:users, :email, '')
 
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
-    add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
-    
-    add_column :users, :type, :string, null: false, default: 'User'
-    add_column :users, :first_name, :string
-    add_column :users, :last_name, :string
-    add_index :users, :type
   end
 
   def self.down
