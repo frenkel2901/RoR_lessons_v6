@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'sessions/new'
 
+  post '/admin/tests/:id/edit', to: 'admin/tests#edit'
+
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do
       resources :answers, shallow: true, only: :show
