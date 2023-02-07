@@ -1,0 +1,64 @@
+ru:
+
+  activerecord:
+    models:
+      test:
+        few: "Теста"
+        many: "Тестов"
+        one: "Тест"
+        other: "Тесты"
+      test_passage:
+        few: "Прохождение Теста"
+        many: "Прохождение Тестов"
+        one: "Прохождение Теста"
+        other: "Прохождение Тестов"
+      user:
+        few: "Пользователя"
+        many: "Пользователей"
+        one: "Пользователь"
+        other: "Пользователи"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        author: "Автор"
+      test_passage:
+        user: "Пользователь"
+        test: "Тест"
+        current_question: "Текущий вопрос"
+        correct_questions: "Правильные"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        confirmation_sent_at: "Дата отправки подтверждения"
+        confirmation_token: "Токен подтверждения"
+        confirmed_at: "Дата подтверждения"
+        created_at: "Дата создания"
+        current_password: "Текущий пароль"
+        current_sign_in_at: "Дата текущего входа"
+        current_sign_in_ip: "IP текущего входа"
+        email: "Email"
+        encrypted_password: "Зашифрованный пароль"
+        failed_attempts: "Неудачные попытки"
+        last_sign_in_at: "Дата последнего входа"
+        last_sign_in_ip: "IP последнего входа"
+        locked_at: "Дата блокировки"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_created_at: "Дата создания запоминания"
+        remember_me: "Запомнить меня"
+        reset_password_sent_at: "Дата отправки сброса пароля"
+        reset_password_token: "Токен сброса пароля"
+        sign_in_count: "Количество входов"
+        unconfirmed_email: "Неподтвержденный email"
+        unlock_token: "Токен разблокировки"
+        updated_at: "Дата обновления"
+
+    errors:
+      messages:
+        blanc: "Не может быть пустым"
+        taken: "Уже существует"
+        required: "Должен существовать"
+      

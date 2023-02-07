@@ -1,12 +1,14 @@
-<h1><%= @test_passage.test.title %> Test was Completed!</h1>
+<h1><%= t('.header', title:@test_passage.test.title ) %></h1>
 
 <% if @test_passage.successfully_passed? %>
-  <p><b><%=  @test_passage.user.email %> </b> you got a high score!<br>
-    <span style="color: green" >Score: <%= @test_passage.percentage_correct_answers %> %</span>
+  <p><%= t('.successed_test', user: @test_passage.user.email) %><br>
+    <span style="color: green"><%=t('.score', pass_percentage: @test_passage.percentage_correct_answers) %></span>
   </p>
+
 <% else %>
-  <p>Sorry <b><%= @test_passage.user.name %></strong></b>, you did not pass the test <br>
-    <span style="color: red">Score: <%= @test_passage.percentage_correct_answers %> %</span></p>
+  <p><%= t('.failed_test', user: @test_passage.user.email) %><br>
+    <span style="color: red"><%=t('.score', pass_percentage: @test_passage.percentage_correct_answers) %></span>
+  </p>
 <% end %>
 
-<%= link_to 'Back to all tests', tests_path %>
+<%= link_to t('action.back'), tests_path %>

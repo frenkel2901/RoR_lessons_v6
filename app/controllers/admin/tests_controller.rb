@@ -1,12 +1,10 @@
 class Admin::TestsController < Admin::BaseController
-
-  before_action :set_test, only: %i[show edit update destroy]
+  
+  before_action :set_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
   end
-
-  def show; end
 
   def new
     @test = Test.new
@@ -16,7 +14,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.made_tests.build(test_params)
     @test.author = current_user
     if @test.save
-      redirect_to [:admin, @test], notice: "Test was successfully created!"
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :new
     end
@@ -36,7 +34,7 @@ class Admin::TestsController < Admin::BaseController
     @test.destroy
     redirect_to admin_tests_path
   end
-  
+
   private
 
   def set_test

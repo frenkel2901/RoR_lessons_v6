@@ -1,33 +1,81 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Please select"
+  
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created!"
+      index:
+        #header: "Tests"
+        new_test: "New Test"
+      edit:
+        edit_test: "Edit Test"
+      new:
+        create_test: "Create New Test"
+      show:
+        create: "Create New Test"
+        edit: "Edit Current Test"
+        new_question: "Create New Question"
+
+  test_passages:
+    show:
+      header: "Passage %{test_title} test"
+      amount_questions: "Total questions: %{number}"
+      current_question: "Question Number: %{number}"
+    result:
+      header: "Test %{title} was Completed!"
+      successed_test: "Congratulations, %{user} Test passed successfully"
+      score: "Score: %{pass_percentage}%"
+      failed_test: "Sorry, %{user}, you did not pass the Test"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests_mailer:
+    completed_test:
+      subject: "You successfully pass the TestGury test!"
+
+  action:
+    back: "Back"
+    edit: "Edit"
+    show: "Show"
+    delete: "Delete"
+    confirm: "Are you sure?"
+
+  label:
+    title: "Title"
+    level: "Level"
+    question: "Question"
+    questions: "Questions"
+    actions: "Actions"
+    start: "Start"
+    next: "Next"
+
+  nav:
+    header: "TestGuru Project"
+    tests: "All Tests"
+    register: "Register"
+    admin_header: "Admin Panel TestGuru"
+    welcome: "Welcome %{user_email}"
+    login: "Login"
+    logout: "Logout"
+    confirm: "Are you sure?"
+    user_view: "Open User View"
+    admin_view: "To Admin Panel"
+    
