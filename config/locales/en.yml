@@ -57,6 +57,7 @@ en:
     show: "Show"
     delete: "Delete"
     confirm: "Are you sure?"
+    remember: "Remember"
 
   label:
     title: "Title"
