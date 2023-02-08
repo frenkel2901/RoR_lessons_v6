@@ -1,0 +1,82 @@
+ru:
+  hello: "Привет мир"
+  
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите"
+  
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан!"
+      index:
+        #header: "Tests"
+        new_test: "Новый Тест"
+      edit:
+        edit_test: "Редактировать Тест"
+      new:
+        create_test: "Создать новый Тест"
+      show:
+        create: "Создать новый Тест"
+        edit: "Редактировать текущий Тест"
+        new_question: "Создать новый Вопрос"
+
+  test_passages:
+    show:
+      header: "Прохождение %{test_title} теста"
+      amount_questions: "Количество вопросов: %{number}"
+      current_question: "Текущий вопрос №: %{number}"
+    result:
+      header: "Тест %{title} завершен"
+      successed_test: "Поздравляем, %{user}, тест успешно пройден"
+      score: "Счет: %{pass_percentage} %"
+      failed_test: "%{user}, Вы не прошли тест"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGury!"
+
+  action:
+    back: "Назад"
+    edit: "Редактировать"
+    show: "Показать"
+    delete: "Удалить"
+    confirm: "Вы уверены?"
+
+  label:
+    title: "Название"
+    question: "Вопрос"
+    questions: "Вопросы"
+    level: "Уровень"
+    actions: "Действия"
+    start: "Начать"
+    next: "Следующий"
+
+  nav:
+    user_view: "Открыть от лица Пользователя"
+    admin_view: "В Админку"
+    header: "Проект ТестГуру"
+    tests: "Доступные тесты"
+    register: "Регистация"
+    admin_header: "Панель администрирования ТестГуру"
+    welcome: "Привет, %{user_email}"
+    login: "Войти"
+    logout: "Выйти"
+    confirm: "Вы уверены?"

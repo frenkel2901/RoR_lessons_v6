@@ -4,6 +4,6 @@
 <ol>
   <%= render @question.answers %>
 </ol>
-<%= link_to 'Edit', edit_admin_question_path(@question) %> |
-<%= link_to 'Back', admin_test_path(@question.test_id)  %></p>
-<%= button_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure' } %>
+<%= link_to t('action.edit'), edit_admin_question_path(@question) %> |
+<%= link_to t('action.back'), admin_test_path(@question.test_id)  %></p>
+<%= button_to t('action.delete'), @question, method: :delete, data: { confirm: t('action.confirm') } %>
