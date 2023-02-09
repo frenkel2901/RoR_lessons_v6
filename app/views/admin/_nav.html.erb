@@ -1,16 +1,17 @@
-<nav>
-  <div class="nav nav-admin">
-    <span class="nav-admin title"><%= t('nav.admin_header') %></span>
+<nav class="navbar navbar-dark bg-dark">
 
-    <div class="nav-admin user">
-      <%= t('nav.welcome', user_email: current_user.email) %>
-      <%= link_to t('nav.logout'), destroy_user_session_path, method: :delete  %>
-    </div>
+  <%= link_to t('nav.admin_header'), admin_tests_path, class: 'navbar-brand ms-3' %>
   
-  </div>
-
   <% if current_user.is_a?(Admin) %>
-    <%= link_to t('nav.user_view'), root_path %>                                    
+    <%= link_to t('nav.user_view'), root_path, class: "nav nav-link"%><br>                 
   <% end %>
+
+  <span class="navbar-text me-3">
+    <% if user_signed_in? %>
+      <%= t('nav.welcome', user_email: current_user.email) %> |
+      <%= link_to t('nav.logout'), destroy_user_session_path, method: :delete,
+                                                              data: {confirm: t('nav.confirm')} %>
+    <% end %>
+  </span>
 
 </nav>

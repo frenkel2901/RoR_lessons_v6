@@ -59,6 +59,7 @@ ru:
     show: "Показать"
     delete: "Удалить"
     confirm: "Вы уверены?"
+    remember: "Запомнить"
 
   label:
     title: "Название"
