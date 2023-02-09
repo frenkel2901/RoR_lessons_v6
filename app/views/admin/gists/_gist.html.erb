@@ -1,0 +1,7 @@
+<tr>
+  <% @gists.questions.each do |gist| %>
+    <td><%= question_link(gist.question) %></td>
+    <td><%= gist_link(gist) %></td>
+    <td><%= gist.user.email %></td>
+  <% end %>
+</tr>
