@@ -1,0 +1,4 @@
+#!/bin/bash
+./myscript &
+sleep 5
+rails s
