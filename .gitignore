@@ -41,4 +41,4 @@ yarn-debug.log*
 .yarn-integrity
 
 # Environment Variables
-#.env
+/home/maria/Desktop/Test-backup/RoR_lessons_v6/app/.env
