@@ -37,8 +37,8 @@ gem 'devise', '~> 4.8'
 
 # NETWORKING
 
-gem 'faraday'
-gem 'faraday-retry', '~>2.0'
+#gem 'faraday'
+#gem 'faraday-retry', '~>2.0'
 
 # LOCALIZATION
 

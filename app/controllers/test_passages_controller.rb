@@ -12,9 +12,9 @@ class TestPassagesController < ApplicationController
     gist = current_user.gists.create(question_id: @test_passage.current_question.id, url: result.html_url)
 
     if gist.save
-      redirect_to @test_passage, notice: "Gist created"
+      redirect_to @test_passage, notice: t('.success', link: view_context.link_to(result.html_url)).html_safe
     else
-      redirect_to @test_passage, alert: "Error"
+      redirect_to @test_passage, alert: t('.failure')
     end
 
   end

@@ -15,11 +15,16 @@ ru:
       prompt: "Выберите"
   
   admin:
+    gists:
+      index:
+        all_gists: "Все Gists"
+        gist_creator: "Автор Gist"
+        gist_url: "Gist URL"
+        gist_question: "Вопрос"
     tests:
       create:
         success: "Тест успешно создан!"
       index:
-        #header: "Tests"
         new_test: "Новый Тест"
       edit:
         edit_test: "Редактировать Тест"
@@ -31,6 +36,9 @@ ru:
         new_question: "Создать новый Вопрос"
 
   test_passages:
+    gist:
+      success: "Gist создан %{link}"
+      failure: "Возникла проблема при сохранении"
     show:
       header: "Прохождение %{test_title} теста"
       amount_questions: "Количество вопросов: %{number}"
