@@ -35,14 +35,17 @@ ru:
         edit: "Редактировать текущий Тест"
         new_question: "Создать новый Вопрос"
 
-  test_passages:
-    gist:
+  gists:
+    create:
       success: "Gist создан %{link}"
       failure: "Возникла проблема при сохранении"
+
+  test_passages:
     show:
       header: "Прохождение %{test_title} теста"
       amount_questions: "Количество вопросов: %{number}"
       current_question: "Текущий вопрос №: %{number}"
+      gist_question: "Вопрос в Gist"
     result:
       header: "Тест %{title} завершен"
       successed_test: "Поздравляем, %{user}, тест успешно пройден"

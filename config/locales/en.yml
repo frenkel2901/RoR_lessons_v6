@@ -35,14 +35,17 @@ en:
         edit: "Edit Current Test"
         new_question: "Create New Question"
 
-  test_passages:
-    gist:
+  gists:
+    create:
       success: "Question save %{link}"
       failure: "An error ocurred while saving gist"
+  
+  test_passages:
     show:
       header: "Passage %{test_title} test"
       amount_questions: "Total questions: %{number}"
       current_question: "Question Number: %{number}"
+      gist_question: "Question to Gist"
     result:
       header: "Test %{title} was Completed!"
       successed_test: "Congratulations, %{user} Test passed successfully"

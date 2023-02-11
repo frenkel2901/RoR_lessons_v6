@@ -32,4 +32,10 @@ class GistQuestionService
   def default_client
     Octokit::Client.new(access_token: GITHUB_TOKEN)
   end
+
+  #def structured_gist
+  #  Struct.new("StructuredGist", :id, :url)
+  #  gist = @client.create_gist(gist_params)
+  #  Struct::StructuredGist.new(gist[:id], gist[:html_url])
+  #end
 end
