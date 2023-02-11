@@ -2,14 +2,19 @@ class GistQuestionService
 
   GITHUB_TOKEN = ENV['GITHUB_TOKEN']
 
-  def initialize(question, client: default_client)
-    @question = question
-    @test = question.test
+  def initialize(test_passage, client: default_client)
+    @test_passage = test_passage
+    @question = test_passage.current_question
+    @test = @question.test
     @client = client
   end
 
   def call
-    @client.create_gist(gist_params)
+    gist = structured_gist
+
+    to_gist = @question.gists.new({url: gist.url, question_id: @question.id, user_id: @test_passage.user_id })
+
+    gist if to_gist.save!
   end
 
   private
@@ -33,9 +38,10 @@ class GistQuestionService
     Octokit::Client.new(access_token: GITHUB_TOKEN)
   end
 
-  #def structured_gist
-  #  Struct.new("StructuredGist", :id, :url)
-  #  gist = @client.create_gist(gist_params)
-  #  Struct::StructuredGist.new(gist[:id], gist[:html_url])
-  #end
+  def structured_gist
+    Struct.new("StructuredGist", :id, :url)
+    gist = @client.create_gist(gist_params)
+    Struct::StructuredGist.new(gist[:id], gist[:html_url])
+  end
+
 end

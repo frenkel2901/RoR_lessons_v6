@@ -3,9 +3,9 @@ class GistsController < ApplicationController
   before_action :set_test_passage, only: %i[create]
 
   def create
-    response = GistQuestionService.new(@test_passage.current_question).call
+    response = GistQuestionService.new(@test_passage).call
 
-    gist = current_user.gists.create(question_id: @test_passage.current_question.id, url: response.html_url) if response.present?
+    #gist = current_user.gists.create(question_id: @test_passage.current_question.id, url: response.html_url) if response.present?
 
     link = helpers.link_to "Gist created", response.url, target: "_blank"
 
