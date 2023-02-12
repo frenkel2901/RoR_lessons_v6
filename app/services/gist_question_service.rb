@@ -12,9 +12,10 @@ class GistQuestionService
   def call
     gist = structured_gist
 
-    to_gist = @question.gists.new({url: gist.url, question_id: @question.id, user_id: @test_passage.user_id })
+    to_gist = @question.gists.new({url: gist.url, question_id: @question.id, user_id: @test_passage.user_id})
 
-    gist if to_gist.save!
+    gist if to_gist.save! || status?
+
   end
 
   private
@@ -36,6 +37,10 @@ class GistQuestionService
 
   def default_client
     Octokit::Client.new(access_token: GITHUB_TOKEN)
+  end
+
+  def status?
+    @client.last_response.status == 201
   end
 
   def structured_gist
