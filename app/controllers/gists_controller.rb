@@ -4,13 +4,12 @@ class GistsController < ApplicationController
 
   def create
     result = GistQuestionService.new(@test_passage).call
-
-    link = helpers.link_to "Gist created", result.url, target: "_blank"
-
-    flash_options = if result.present?
+ 
+    flash_options = if result.success?
+      link = helpers.link_to "Gist created", result.url, target: "_blank"
       { notice: t(".success", link: link) }
     else
-      { notice: t(".failure") }
+      { alert: t(".failure") }
     end
 
     redirect_to @test_passage, flash_options
