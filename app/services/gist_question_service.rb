@@ -1,10 +1,10 @@
-StructuredGist = Struct.new(:status, :url) do
-  def success?
-    status == 201
-  end
-end
-
 class GistQuestionService
+
+  StructuredGist = Struct.new(:url) do
+    def success?
+      created?
+    end
+  end
 
   def initialize(test_passage, client: default_client)
     @test_passage = test_passage
@@ -17,11 +17,13 @@ class GistQuestionService
     gist = @client.create_gist(gist_params)
 
     if created?
-      to_gist = @question.gists.create!({url: gist.html_url, question_id: @question.id, user_id: @test_passage.user_id})
+      to_gist = @question.gists.create!({url: gist.html_url, question: @question, user: @test_passage.user})
+      url = to_gist.url
     else
+      url = nil
     end
 
-    StructuredGist.new(@client.last_response.status, to_gist.url)
+    StructuredGist.new(url)
   end
 
   private
