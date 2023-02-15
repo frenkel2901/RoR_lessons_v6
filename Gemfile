@@ -35,11 +35,6 @@ gem 'octokit', '~>6.0'
 
 gem 'devise', '~> 4.8'
 
-# NETWORKING
-
-#gem 'faraday'
-#gem 'faraday-retry', '~>2.0'
-
 # LOCALIZATION
 
 gem 'rails-i18n', '~> 6.0'

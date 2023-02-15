@@ -1,8 +1,8 @@
 class GistQuestionService
 
-  StructuredGist = Struct.new(:url) do
+  StructuredGist = Struct.new(:url, :status) do
     def success?
-      created?
+      self.status
     end
   end
 
@@ -16,14 +16,14 @@ class GistQuestionService
   def call
     gist = @client.create_gist(gist_params)
 
-    if created?
+    if gist_created?
       to_gist = @question.gists.create!({url: gist.html_url, question: @question, user: @test_passage.user})
       url = to_gist.url
     else
       url = nil
     end
 
-    StructuredGist.new(url)
+    StructuredGist.new(url, gist_created?)
   end
 
   private
@@ -47,7 +47,7 @@ class GistQuestionService
     Octokit::Client.new(access_token: ENV.fetch('GITHUB_TOKEN'))
   end
 
-  def created?
+  def gist_created?
     @client.last_response.status == 201
   end
 end
