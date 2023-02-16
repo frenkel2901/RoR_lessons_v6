@@ -5,9 +5,13 @@
     <%= link_to t('.new_test'), new_admin_test_path %>
   </p>
 
-  <table class="table table-striped-columns text-center">
+  <table class="table">
     <tr>
-      <th><%= t('label.title') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('label.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th><%= t('label.level') %></th>
       <th><%= t('label.questions') %></th>
       <th colspan="2"><%= t('label.actions') %></th>
