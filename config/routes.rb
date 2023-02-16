@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   post '/admin/tests/:id/edit', to: 'admin/tests#edit'
+  get '/tests/:id/start', to: 'tests#start'
 
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+      resources :gists, only: %i[create]
     end
   end
 
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :gists, only: :index
   end
 
 end

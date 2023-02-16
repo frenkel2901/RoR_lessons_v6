@@ -15,11 +15,16 @@ en:
       prompt: "Please select"
   
   admin:
+    gists:
+      index:
+        all_gists: "All Gists"
+        gist_creator: "Gist Creator"
+        gist_url: "Gist URL"
+        gist_question: "Question"
     tests:
       create:
         success: "Test was successfully created!"
       index:
-        #header: "Tests"
         new_test: "New Test"
       edit:
         edit_test: "Edit Test"
@@ -30,11 +35,17 @@ en:
         edit: "Edit Current Test"
         new_question: "Create New Question"
 
+  gists:
+    create:
+      success: "Question save %{link}"
+      failure: "An error ocurred while saving gist"
+  
   test_passages:
     show:
       header: "Passage %{test_title} test"
       amount_questions: "Total questions: %{number}"
       current_question: "Question Number: %{number}"
+      gist_question: "Question to Gist"
     result:
       header: "Test %{title} was Completed!"
       successed_test: "Congratulations, %{user} Test passed successfully"
