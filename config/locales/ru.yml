@@ -34,6 +34,8 @@ ru:
         create: "Создать новый Тест"
         edit: "Редактировать текущий Тест"
         new_question: "Создать новый Вопрос"
+      form_inline:
+        submit: "OK"
 
   gists:
     create:
