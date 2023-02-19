@@ -2,9 +2,13 @@
 
   <h2><%= t('nav.tests') %></h2>
 
-  <table class="table table-bordered border-primary text-center">
+  <table class="table">
     <tr>
-      <th><%= t('label.title') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('label.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th><%= t('label.level') %></th>
       <th><%= t('label.questions') %></th>
       <th><%= t('label.start') %></th>
