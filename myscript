@@ -1,3 +1,4 @@
 #!/bin/bash
+sudo service postgresql restart
 export NODE_OPTIONS=--openssl-legacy-provider
 bin/webpack-dev-server
