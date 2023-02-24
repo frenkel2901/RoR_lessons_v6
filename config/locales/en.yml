@@ -80,6 +80,7 @@ en:
     actions: "Actions"
     start: "Start"
     next: "Next"
+    feedback: "Feedback"
 
   nav:
     header: "TestGuru Project"
@@ -92,4 +93,11 @@ en:
     confirm: "Are you sure?"
     user_view: "Open User View"
     admin_view: "To Admin Panel"
+
+  feedbacks:
+    new:
+      submit: "Принять"
+      comment: "Пожелания"
+      email: "Email"
+      name: "Имя"
     

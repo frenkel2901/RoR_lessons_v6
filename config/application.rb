@@ -25,5 +25,7 @@ module Tests
 
     config.i18n.default_locale = :ru
     config.i18n.available_locales = %i[en ru]
+
+    config.autoloader = :classic
   end
 end
