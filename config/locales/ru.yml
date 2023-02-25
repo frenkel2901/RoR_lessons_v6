@@ -82,6 +82,7 @@ ru:
     actions: "Действия"
     start: "Начать"
     next: "Следующий"
+    feedback: "Фидбэк"
 
   nav:
     user_view: "Открыть от лица Пользователя"
@@ -94,3 +95,10 @@ ru:
     login: "Войти"
     logout: "Выйти"
     confirm: "Вы уверены?"
+
+  feedbacks:
+    new:
+      submit: "Submit"
+      comment: "Your comments"
+      email: "Email"
+      name: "Name"

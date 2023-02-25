@@ -1,0 +1,8 @@
+<%= form_with url: feedbacks_path, method: :post do |form| %>
+
+<p>
+  <%= form.label :comment, t('.comment')%> <br>
+  <%= form.text_area :comment %>
+</p>
+<%= form.submit t('.submit') %>
+<% end %>
