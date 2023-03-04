@@ -1,0 +1,14 @@
+<tr>
+  <td><div class="badge-img"><%= image_tag "#{badge.image}", alt:'badge' %></div></td>
+  <td><%= badge.title %></td>
+  <td colspan="3">
+    <% if current_user.is_a?(Admin) %>
+       <div>
+         <%= link_to 'Edit',  edit_admin_badge_path(badge) %>
+         <%= link_to 'Delete', admin_badge_path(badge), 
+                                                method: :delete,
+                                                data: { confirm: 'Confirm?' } %>
+         </div>
+    <% end %>
+  </td>
+</tr>
