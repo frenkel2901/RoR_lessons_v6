@@ -6,5 +6,6 @@ class BadgeRulesService
     @test_passage = test_passage
     @category = @test.category
     @level = @test.level
+    @user_passages = @user.test_passages
   end
 end
