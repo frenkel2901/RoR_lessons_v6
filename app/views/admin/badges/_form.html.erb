@@ -12,14 +12,10 @@
     </p>
 
     <p>
-      <%= form.label :rule_name %> <br>
-      <%= form.select :rule_name, Badge::RULES, prompt: true %>
+      <%= form.label :rule %> <br>
+      <%= form.select :rule,  options_for_select(Badge::RULES.pluck(:title, :value))%>
     </p>
 
-    <p>
-      <%= form.label :rule_value %> <br>
-      <%= form.text_field :rule_value %>
-    </p>
     <p><%= form.submit %></p>
   </div>
 <% end %>

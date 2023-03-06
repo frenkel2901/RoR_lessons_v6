@@ -100,8 +100,7 @@ ru:
     start: "Начать"
     next: "Следующий"
     feedback: "Фидбэк"
-    rule_name: "Название"
-    rule_value: "Опции"
+    rule: "Название"
     my_badges: "Мои награды"
     all_badges: "Список существующих наград"
 

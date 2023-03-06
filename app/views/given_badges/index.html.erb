@@ -1,0 +1,19 @@
+<h1><%= t('.header')%></h1>
+
+<% if @given_badges.size == 0 %>
+<p> You have no badges yet </p>
+
+<% else %>
+  <table class="table align-center">
+    <thead>
+      <tr>
+        <th><%= t('.sticker')%></th>
+        <th><%= t('.title')%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render 'given_badge', given_badges: @given_badges %>
+    </tbody>
+  </table>
+
+<% end %>

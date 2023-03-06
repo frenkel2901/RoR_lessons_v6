@@ -17,12 +17,13 @@ class Test < ApplicationRecord
   scope :by_level, ->(level) { where(level: level) }
   scope :by_ids, ->(ids) { where(id: ids) }
 
-  def self.filter_by_category(category)
-    by_category(category).pluck(:title)
+
+  def self.tests_by_category(category)
+    by_category(category)
   end
 
-  def self.filter_by_level(level)
-    by_level(level).pluck(:title)
+  def self.tests_by_level(level)
+    by_level(level)
   end
 
 end

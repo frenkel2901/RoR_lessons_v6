@@ -1,0 +1,6 @@
+<% given_badges.each do |given_badge| %>
+  <tr>
+    <td><div class="badge-img"><%= image_tag "#{given_badge.image}", alt:'given_badge' %></div></td>
+    <td><%= given_badge.title %></td>
+  </tr>
+<% end %>

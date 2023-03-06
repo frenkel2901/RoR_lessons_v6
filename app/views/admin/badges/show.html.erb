@@ -1,8 +1,7 @@
 <div>
   <p><strong><%= t('label.title') %></strong>: <%= @badge.title %></p>
   <p><strong><%= t('.image') %></strong>: <%= @badge.image %></p>
-  <p><strong><%= t('label.rule_name') %></strong>: <%= @badge.rule_name %></p>
-  <p><strong><%= t('label.rule_value') %></strong>: <%= @badge.rule_value %></p>
+  <p><strong><%= t('label.rule') %></strong>: <%= @badge.rule %></p>
   <p><%= link_to t('actions.back'), admin_badges_path  %> |
     <%= link_to t('actions.edit'),edit_admin_badge_path(@badge) %> |
     <%= link_to t('actions.delete'), admin_badge_path(@badge),

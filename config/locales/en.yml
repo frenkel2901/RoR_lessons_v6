@@ -107,8 +107,7 @@ en:
     start: "Start"
     next: "Next"
     feedback: "Feedback"
-    rule_name: "Rule Name"
-    rule_value: "Rule Options"
+    rule: "Rule Name"
     my_badges: "My Badges"
     all_badges: "All Badges"
 

@@ -1,4 +1,4 @@
-class GivenBadges < ActiveRecord::Migration[6.0]
+class CreateGivenBadges < ActiveRecord::Migration[6.0]
   def change
     create_table :given_badges do |t|
       t.references :user, null: false, foreign_key: true

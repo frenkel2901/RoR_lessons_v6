@@ -1,11 +1,15 @@
 class Badge < ApplicationRecord
-  RULES = %i[category? level? attempt?].freeze
+
+  RULES = [
+    { value: "attempt?", title: "За успешное прохождения теста с первого раза" },
+    { value: "category?", title: "За прохождение всех тестов из категории" },
+    { value: "level?", title: "За прохождение всех тестов по уровню" },
+  ]
 
   has_many :given_badges
   has_many :users, through: :given_badges, dependent: :destroy
 
-  validates :title, :rule_value, :rule_name, presence: true
-
-  scope :by_rule_name, ->(name) { where(rule_name: name) }
-  scope :by_rule_value, ->(name) { where(rule_value: name) }
+  validates :title, presence: true
+  validates :image, presence: true, format: { with: URI::regexp(%w(http https)) }
+  validates :rule, presence: true
 end
