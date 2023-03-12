@@ -36,7 +36,33 @@ en:
         new_question: "Create New Question"
       form_inline:
         submit: "OK"
+    badges:
+      create:
+        success: "Badge Success Created"
+      destroy:
+        success: "Badge Success Removed"
+      update:
+        success: "Badge Success Updated"
+      index:
+        header: "All Badges"
+        new: "New Badge"
+        image: "Image"
+      new:
+        header: "Create Badge"
+      edit:
+        header: "Edit Badge"
+      show:
+        image: "Show Image"
 
+  badges:
+    index:
+      header: "Show Badges"
+      create_badges: "Create badges"
+      title: "Title"
+      sticker: "Sticker"
+      actions: "Actions"
+
+  
   gists:
     create:
       success: "Question save %{link}"
@@ -81,6 +107,9 @@ en:
     start: "Start"
     next: "Next"
     feedback: "Feedback"
+    rule: "Rule Name"
+    my_badges: "My Badges"
+    all_badges: "All Badges"
 
   nav:
     header: "TestGuru Project"

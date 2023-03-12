@@ -1,0 +1,14 @@
+<div class="container">
+  <h3><%= t('.header') %></h3>
+  <span>
+    <%= link_to t('.new'), new_admin_badge_path %>
+  </span>
+  <table class="table align-center">
+    <tr>
+      <th><%= t('.image') %></th>
+      <th><%= t('label.rule') %></th>
+      <th colspan="3"><%= t('label.actions') %></th>
+    </tr>
+    <%= render @badges %>
+  </table>
+</div>

@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :made_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
   has_many :gists, dependent: :destroy
 
+  has_many :given_badges
+  has_many :badges, through: :given_badges, dependent: :destroy
+
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def test_passage(test)

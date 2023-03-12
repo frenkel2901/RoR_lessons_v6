@@ -16,12 +16,16 @@ class TestPassage < ApplicationRecord
     percentage_correct_answers >= GREAT
   end
 
+  def passed_test_ids
+    user.test_passages.where(passed: true).pluck(:test_id).uniq
+  end
+
   def number_of_questions
     test.questions.count
   end
 
   def current_question_number
-    test.questions.index(current_question).next
+    test.questions.index(current_question)&.next
   end
 
   def percentage_correct_answers
@@ -30,6 +34,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.passed = true if successfully_passed?
     save!
   end
 

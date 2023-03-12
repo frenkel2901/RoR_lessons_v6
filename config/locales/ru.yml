@@ -36,6 +36,23 @@ ru:
         new_question: "Создать новый Вопрос"
       form_inline:
         submit: "OK"
+    badges:
+      create:
+        success: "Бэйдж успешно создан"
+      destroy:
+        success: "Бэйдж успешно удален"
+      update:
+        success: "Бэйдж успешно изменен"
+      index:
+        header: "Все Бэйджи"
+        new: "Новый Бэйдж"
+        image: "Изображение"
+      new:
+        header: "Создать Badge"
+      edit:
+        header: "Редактировать Badge"
+      show:
+        image: "Изображение"
 
   gists:
     create:
@@ -83,6 +100,18 @@ ru:
     start: "Начать"
     next: "Следующий"
     feedback: "Фидбэк"
+    rule: "Название"
+    my_badges: "Мои награды"
+    all_badges: "Список существующих наград"
+
+  badges:
+    index:
+      header: "Показать Награды"
+      create_badges: "Создать бейдж"
+      sticker: "Стикер"
+      title: "Название"
+      actions: "Действия"
+      
 
   nav:
     user_view: "Открыть от лица Пользователя"
